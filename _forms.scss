@@ -5,7 +5,7 @@
 // .form-horizontal - Horizontal controls
 //
 @function form-image-url($path) {
-  @return url("../local/iman-styles-form/images/#{$path}");
+  @return url("../components/iman-styles-form/assets/#{$path}");
 }
 
 %basic-form-control {
