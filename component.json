@@ -1,0 +1,24 @@
+{
+  "name": "form",
+  "main": "index.scss",
+  "version": "0.2.0",
+  "dependencies": {},
+  "styles": [
+    "index.scss",
+    "_forms.scss",
+    "controls/_control-checkbox.scss",
+    "controls/_control-group.scss",
+    "controls/_control-icon.scss",
+    "controls/_control-radio.scss",
+    "controls/_control-select.scss",
+    "controls/_control-text.scss",
+    "controls/_control-textarea.scss",
+    "controls/_control-search.scss"
+  ],
+  "files": [
+    "assets/icon-calendar.png",
+    "assets/icon-calendar.svg",
+    "assets/icon-tick-circle-green.png",
+    "assets/search.svg"
+  ]
+}

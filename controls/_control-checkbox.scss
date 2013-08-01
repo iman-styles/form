@@ -1,0 +1,20 @@
+.control-checkbox {
+  @extend %basic-form-control;
+  position: relative;
+  zoom: 1;
+
+  a {
+    @extend .anchor-1;
+  }
+
+  input {
+    left: 0;
+    position: absolute;
+    top: 5px;
+  }
+
+  .control-checkbox__label {
+    display: inline-block;
+    padding-left: 20px;
+  }
+}

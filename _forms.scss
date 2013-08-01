@@ -1,0 +1,124 @@
+// Form Examples. Forms are made up of control-group components. Spacing is mostly
+// handled by spacing classes and modifiers on the control-groups. If you require
+// a form control with unique styling, create a new control-group type.
+//
+// .form-horizontal - Horizontal controls
+//
+@function form-image-url($path) {
+  @return url("../local/iman-styles-form/images/#{$path}");
+}
+
+%basic-form-control {
+  display: block;
+  //margin-bottom: spacing(1.25);
+
+  .control__group-label,
+  .control__label,
+  & > label {
+    @include improve-text-rendering;
+    display: block;
+    font-family: $font-family-roboto;
+    font-weight: 500;
+
+    .optional {
+      font-size: 11px;
+      color: #aaa;
+      font-weight: 300;
+      font-style: italic;
+    }
+  }
+
+  .control__text {
+    @extend .text-small;
+    @extend .copy;
+    display: block;
+    margin: spacing(0.5) 0;
+  }
+}
+
+.control-basic {
+  @extend %basic-form-control;
+}
+
+.form {
+  @extend %basic-form-control;
+
+  .control-group__help-block {
+    display: block;
+  }
+
+  .control-group__help-inline {
+    vertical-align: baseline;
+  }
+
+  label {
+    display: block;
+  }
+}
+
+.form__inner {
+  border: 1px solid #ddd;
+}
+
+.form__row {
+  margin-top: 30px;
+
+  &:first-child {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  &.form__row--bordered {
+    border-top: 1px dashed #ddd;
+    padding-top: 20px;
+  }
+}
+
+.form__title {
+  //background: $green;
+  //color: #fff;
+  // padding: 10px 20px;
+  // margin: -20px -20px 20px -20px;
+}
+
+.form__container {}
+
+.form__actions {
+  background: #f6f6f6;
+  padding: 30px 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: -20px;
+  margin-top: 40px;
+}
+
+
+.pci {
+  position: relative;
+}
+
+.pci__iframe {
+
+}
+
+.pci__overlay {
+  background: $green-lightest no-repeat center 200px;
+  background-color: rgba($green-lightest,.8);
+  left: -20px;
+  right: -20px;
+}
+.pci__title {
+  font-weight: bold;
+}
+
+.pci__btn {
+  position: relative;
+  bottom: -29px;
+}
+
+
+.control-date-picker input {
+  background: form-image-url('icon-calendar.png') 98% 50% no-repeat;
+  background-image: form-image-url('icon-calendar.svg'), none;
+}
