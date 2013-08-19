@@ -20,68 +20,65 @@
     }
   }
 
-  .pointerevents.cssgradients & {
+  select {
+    @include improve-text-rendering;
+    background: #eee;
+    -webkit-appearance: none;
+    -moz-appearance: none !important;
+    appearance: none;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 0 0 #fff inset,  0 1px 0 rgba(#000, 0.05);
+    color: $grey-dark;
+    cursor: pointer;
+    font-family: $font-family-roboto;
+    font-size: 13px;
+    font-weight:400;
+    line-height: 19px;
+    outline: none;
+    padding: 6px 10px 5px 10px;
+    width: 100%;
 
+    &.is-invalid,
+    &.is-invalid:hover {
+      border-color: $error-border-color;
+      color: $grey-darkest;
+    }
+  }
+
+  &:before {
+    @include show-pseudo-element;
+    background: #eee;
+    width: 30px;
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    right: 1px;
+    border-radius: 0 3px 3px 0;
+    pointer-events: none;
+  }
+
+  &:after {
+    @include show-pseudo-element;
+    @include triangle('bottom', 13px, 7px, $grey-dark);
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    pointer-events: none;
+  }
+
+  &.is-disabled {
     select {
-      @include improve-text-rendering;
-      background: #eee;
-      -webkit-appearance: none;
-      -moz-appearance: none !important;
-      appearance: none;
-      border-radius: 3px;
-      border: 1px solid #ccc;
-      box-shadow: 0 1px 0 0 #fff inset,  0 1px 0 rgba(#000, 0.05);
-      color: $grey-dark;
-      cursor: pointer;
-      font-family: $font-family-roboto;
-      font-size: 13px;
-      font-weight:400;
-      line-height: 19px;
-      outline: none;
-      padding: 6px 10px 5px 10px;
-      width: 100%;
-
-      &.is-invalid,
-      &.is-invalid:hover {
-        border-color: $error-border-color;
-        color: $grey-darkest;
-      }
+      background: #F1F1F1;
+      border-color: #CCC;
+      box-shadow: none;
+      color: #AAA;
     }
-
     &:before {
-      @include show-pseudo-element;
-      background: #eee;
-      width: 30px;
-      position: absolute;
-      top: 2px;
-      bottom: 2px;
-      right: 1px;
-      border-radius: 0 3px 3px 0;
-      pointer-events: none;
+      box-shadow: none;
     }
-
-    &:after {
-      @include show-pseudo-element;
-      @include triangle('bottom', 13px, 7px, $grey-dark);
-      position: absolute;
-      top: 13px;
-      right: 10px;
-      pointer-events: none;
-    }
-
-    &.is-disabled {
-      select {
-        background: #F1F1F1;
-        border-color: #CCC;
-        box-shadow: none;
-        color: #AAA;
-      }
-      &:before {
-        box-shadow: none;
-      }
-      &:after{
-        @include triangle('bottom', 13px, 7px, #ccc);
-      }
+    &:after{
+      @include triangle('bottom', 13px, 7px, #ccc);
     }
   }
 }
