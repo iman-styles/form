@@ -75,15 +75,13 @@
   }
 }
 
-.form__title {
-  //background: $green;
-  //color: #fff;
-  // padding: 10px 20px;
-  // margin: -20px -20px 20px -20px;
+// form footer
+.form-footer {
+  padding: 20px;
+  background: #e9e9e9;
 }
 
-.form__container {}
-
+// form actions
 .form__actions {
   background: #f6f6f6;
   padding: 30px 20px;
@@ -93,32 +91,36 @@
   margin-top: 40px;
 }
 
-
-.pci {
-  position: relative;
-}
-
-.pci__iframe {
-
-}
-
-.pci__overlay {
-  background: $green-lightest no-repeat center 200px;
-  background-color: rgba($green-lightest,.8);
-  left: -20px;
-  right: -20px;
-}
-.pci__title {
-  font-weight: bold;
-}
-
-.pci__btn {
-  position: relative;
-  bottom: -29px;
-}
-
-
+// date picker
 .control-date-picker input {
   background: form-image-url('icon-calendar.png') 98% 50% no-repeat;
   background-image: form-image-url('icon-calendar.svg'), none;
+}
+
+// faux creditcard input
+.faux-creditcard-input {
+  left: 52px;
+  position: absolute;
+  top: 328px;
+  width: 41.5%;
+
+  i {
+    opacity:0;
+    bottom: 4px;
+    position: absolute;
+    right: 9px;
+  }
+
+  .is-valid i {
+    @include animation(pop-out ease 0.4s);
+    opacity:1 !important;
+  }
+
+  .no-cssanimations & i {
+    display: none;
+  }
+
+  .no-cssanimations & .is-valid i {
+    display: block;
+  }
 }
