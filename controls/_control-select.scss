@@ -46,25 +46,33 @@
     }
   }
 
-  &:before {
-    @include show-pseudo-element;
-    background: #eee;
-    width: 30px;
-    position: absolute;
-    top: 2px;
-    bottom: 2px;
-    right: 1px;
-    border-radius: 0 3px 3px 0;
-    pointer-events: none;
+  // remove border from ie10 select arrow
+  select::-ms-expand {
+      border: none;
   }
 
-  &:after {
-    @include show-pseudo-element;
-    @include triangle('bottom', 13px, 7px, $grey-dark);
-    position: absolute;
-    top: 13px;
-    right: 10px;
-    pointer-events: none;
+  // if ie, don't cover up select arrow
+  .pointerevents & {
+    &:before {
+      @include show-pseudo-element;
+      background: #eee;
+      width: 30px;
+      position: absolute;
+      top: 2px;
+      bottom: 2px;
+      right: 1px;
+      border-radius: 0 3px 3px 0;
+      pointer-events: none;
+    }
+
+    &:after {
+      @include show-pseudo-element;
+      @include triangle('bottom', 13px, 7px, $grey-dark);
+      position: absolute;
+      top: 13px;
+      right: 10px;
+      pointer-events: none;
+    }
   }
 
   &.is-disabled {
