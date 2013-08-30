@@ -9,8 +9,16 @@
     top: 50%;
     left: 10px;
     margin-top: -7px;
+
     &:checked + .control-radio__label {
-    background: $grey-light;
+      background: $grey-light;
+    }
+
+    &:focus {
+      border-radius: 13px;
+      box-shadow: 0 0 5px rgba($orange, 0.9);
+      outline: none;
+      border-color: $orange;
     }
   }
 
