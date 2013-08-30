@@ -11,6 +11,12 @@
     left: 0;
     position: absolute;
     top: 5px;
+
+    &:focus {
+      box-shadow: 0 0 5px rgba($orange, 0.9);
+      outline: none;
+      border-color: $orange;
+    }
   }
 
   .control-checkbox__label {
