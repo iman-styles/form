@@ -22,25 +22,24 @@
 
   select {
     @include improve-text-rendering;
-    background: #eee;
+    background: #fafafa;
     -webkit-appearance: none;
     -moz-appearance: none !important;
     appearance: none;
-    border-radius: 3px;
+    border-radius: 0;
     border: 1px solid #ccc;
-    box-shadow: 0 1px 0 0 #fff inset,  0 1px 0 rgba(#000, 0.05);
-    color: $grey-dark;
+    color: #444;
     cursor: pointer;
     font-family: $font-family-roboto;
-    font-size: 13px;
+    font-size: 14px;
     font-weight:400;
-    line-height: 19px;
+    line-height: 23px;
     outline: none !important;
     padding: 6px 10px 5px 10px;
     width: 100%;
 
     &:focus {
-      box-shadow: 0 0 5px rgba($orange, 0.7);
+      outline: none;
       border-color: $orange;
     }
 
@@ -63,8 +62,8 @@
       background: #eee;
       width: 30px;
       position: absolute;
-      top: 2px;
-      bottom: 2px;
+      top: 1px;
+      bottom: 1px;
       right: 1px;
       border-radius: 0 3px 3px 0;
       pointer-events: none;
@@ -74,7 +73,7 @@
       @include show-pseudo-element;
       @include triangle('bottom', 13px, 7px, $grey-dark);
       position: absolute;
-      top: 13px;
+      top: 16px;
       right: 10px;
       pointer-events: none;
     }
